@@ -1,0 +1,40 @@
+.list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+
+    margin: 0px auto;
+
+    width: 100%;
+}
+
+.list--vertical {
+    flex-direction: column;
+}
+
+.list--user-id {
+    padding: 0;
+    max-height: calc(100vh - 96px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: flex-start;
+}
+
+.list-item {
+    padding: 5px 0px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.list-item--user-id {
+    padding: 15px 0px;
+    background: $custom-gold;
+
+    color: $grey-100;
+    font-weight: bolder;
+
+    width: 100%;
+
+    border-bottom: 1px solid $grey-400;
+}
