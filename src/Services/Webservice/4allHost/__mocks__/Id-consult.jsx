@@ -9,9 +9,9 @@ function getId(props) {
     }
 
     return new Promise((resolve,reject) => {
-        id.nextTick(() => {
-            jsonId[props.id]
-                ? resolve(id[props.id])
+        process.nextTick(() => {
+            id[2]
+                ? resolve(id[2])
                 : reject({
                     error: 'Não existe o ID:' + props.id
                 });
