@@ -22,8 +22,7 @@ class Index extends Component {
                         response : true,
                         options : data
                     });
-                } else {
-                    console.log(data);
+                } else {                    
                     this.setState({
                         received : true
                     })
