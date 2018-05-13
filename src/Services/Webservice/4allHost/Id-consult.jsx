@@ -1,12 +1,14 @@
-function getId(props) {
-    return Promise.all([fetchingId()]);
-}
-
-function fetchingId() {
+async function getId(props) {
     const url = 'http://dev.4all.com:3003';
     const page = 'tarefa';
-    return fetch(`${url}/${page}`)
-            .then(data => data.json())
-            .catch(error =>  error)
+
+    try {
+        const theFetch = await fetch(`${url}/${page}`);
+
+        return theFetch.json();
+    } catch (err) {
+        return false
+    }
 }
+
 export default getId;
