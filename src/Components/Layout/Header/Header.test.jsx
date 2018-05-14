@@ -9,7 +9,7 @@ describe('Header component test', () => {
     it('Check if component is renderizing and have its own correctly nodes', () => {
         const wrapper = shallow(<Header />);
         expect(wrapper.find('.header').exists()).toBe(true);
-        expect(wrapper.find('.backward-icon').exists()).toBe(true);
+        expect(wrapper.find('.header-icon--backward').exists()).toBe(true);
     });
 
     it('Checks if the nav has two childs', () => {
