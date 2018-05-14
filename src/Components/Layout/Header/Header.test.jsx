@@ -12,9 +12,13 @@ describe('Header component test', () => {
         expect(wrapper.find('.backward-icon').exists()).toBe(true);
     });
 
-    it('Checks if is receiving props', () => {
-        const wrapper = shallow(<Header placeName='Porto Alegre, RS'/>);
+    it('Checks if the nav has two childs', () => {
+        const wrapper = shallow(<Header />);
         expect(wrapper.find('.header-place').children()).toHaveLength(2);
     });
 
+    it('Check if is receiving the right props', () => {
+        const wrapper = mount(<Header placeName='Porto Alegre, RS'/>);
+        expect(wrapper.prop('placeName')).toEqual('Porto Alegre, RS');
+    });
 });
