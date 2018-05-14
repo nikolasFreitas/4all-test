@@ -11,7 +11,7 @@ class Header extends Component {
                 <div className='backward-icon'> </div>
                 <div className='header-place'>
                     <span className='place-icon'></span>
-                    <span className='localization'></span>
+                    <span className='localization'>{this.props.placeName}</span>
                 </div>
                 <div className='search-icon'> </div>
             </header>
