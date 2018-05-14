@@ -20,7 +20,7 @@ describe('Block of tests of Index scene', () => {
     });
 
     test('check if Index states change when return the promise',async () => {
-        const wrapper = await shallow(<Index />);
+        const wrapper = await mount(<Index />);
 
         expect(wrapper.state('received')).toBe(true);
         expect(wrapper.state('response')).toBe(true);
