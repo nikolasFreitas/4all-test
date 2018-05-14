@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Assets/css/general.css';
-import Index from './Scenes/Index/Index';
+import Home from './Scenes/Home/Home';
 
 class App extends Component {
     render() {
         return (
-            <Index />
+            <Home />
         );
     }
 }
