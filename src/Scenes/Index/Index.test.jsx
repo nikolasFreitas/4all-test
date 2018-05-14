@@ -16,7 +16,7 @@ describe('Block of tests of Index scene', () => {
         const wrapper =  shallow(<Index />);
         expect(wrapper.state('received')).toBe(false);
         expect(wrapper.state('response')).toBe(false);
-        expect(wrapper.state('options')).toEqual({});
+        expect(wrapper.state('idTable')).toEqual({});
     });
 
     test('check if Index states change when return the promise',async () => {

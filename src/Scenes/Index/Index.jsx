@@ -6,7 +6,7 @@ class Index extends Component {
         super(props);
 
         this.state = {
-            options : {},
+            idTable : {},
             clickedId : null,
             received : false,
             response : false
@@ -20,9 +20,9 @@ class Index extends Component {
                     this.setState({
                         received : true,
                         response : true,
-                        options : data
+                        idTable : data
                     });
-                } else {                    
+                } else {
                     this.setState({
                         received : true
                     })
@@ -38,7 +38,7 @@ class Index extends Component {
                         <h1>Escolha uma das opções</h1>
                         <ul className="list list--vertical list--user-id">
                         {
-                         this.state.options.lista.map((option, index) => {
+                         this.state.idTable.lista.map((option, index) => {
                              return (
                                  <li className="list-item list-item--user-id" key={index}>{option}</li>
                              )
