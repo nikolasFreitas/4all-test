@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px 15px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    min-height: 25px;
+    width: 100%;
+
+    background: $custom-gold;
+}
+
+.header-icon {
+    color: #EEEEEE;
+    text-align: center;
+
+    width: 30px;
+    padding: 0px 5px;
+}
+
+.header-place {
+    width: calc(100% - 60px);
+
+    color: #EEEEEE;
+    text-align: center;
+}
