@@ -3,9 +3,12 @@
 @import "sass/variables/_width-var";
 
 // General rules
-@import "sass/general-rules/_general-rules.scss";
-@import "sass/general-rules/_fonts.scss";
+@import "sass/general-rules/_general-rules";
+@import "sass/general-rules/_fonts";
 
 // Get app style sheets
-@import "sass/container/_container.scss";
-@import "sass/list/_list.scss";
+@import "sass/container/_container";
+@import "sass/list/_list";
+@import "sass/header/_header";
+@import "sass/container/_image-box";
+@import "sass/icons/_star-icon";
