@@ -15,5 +15,15 @@ describe('Tests of Home scene', () => {
         expect(wrapper.state('userInfo')).toEqual({});
     });
 
+    it('expect 5 buttons of navigation', () => {
+        const wrapper = shallow(<Home />);
+        expect(wrapper.find('.tool-box').children()).toHaveLength(5);
+    });
+
+    it('Checks if Map is renderizing', () => {
+        const wrapper = mount(shallow(<Home />).get(0));
+        // expect(wrapper.find('<GoogleMaps />').exists()).toBe(true);
+    });
+
 
 });
