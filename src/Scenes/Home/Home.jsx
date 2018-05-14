@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Header from '../../Components/Layout/Header/Header.jsx';
 
 class Home extends Component {
     constructor(props) {
@@ -13,8 +14,12 @@ class Home extends Component {
 
     render() {
         return(
-            <div>
-                <h1>Home here!</h1>
+            <div className='container'>
+                <Header placeName='Porto Alegre, RS'/>
+                <section className='home-image-box'>
+                    <div className="favorite-icon"></div>
+                </section>
+                <h2>Lorem</h2>
             </div>
             )
     }
