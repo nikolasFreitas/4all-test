@@ -25,11 +25,23 @@ class Home extends Component {
                     <h2>Lorem</h2>
                     <div className="content-box">
                         <div className='tool-box'>
-                            <span className='nav-btn nav-btn--call'></span>
-                            <span className='nav-btn nav-btn--services'></span>
-                            <span className='nav-btn nav-btn--adress'></span>
-                            <span className='nav-btn nav-btn--comentary'></span>
-                            <span className='nav-btn nav-btn--favorite'></span>
+                            <span className='nav-btn nav-btn--call'>
+                                <i class="fa fa-phone"></i>
+                            </span>
+
+                            <span className='nav-btn nav-btn--services'>
+                                <i class="fa fa-diamond"></i>
+                            </span>
+
+                            <span className='nav-btn nav-btn--adress'>
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+
+                            <span className='nav-btn nav-btn--comentary'><i class="fa fa-comments"></i></span>
+
+                            <span className='nav-btn nav-btn--favorite'>
+                                <i className="fa fa-star"></i>
+                            </span>
                         </div>
                     </div>
                 </section>
