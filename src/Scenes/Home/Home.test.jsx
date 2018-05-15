@@ -4,25 +4,34 @@ import Home from './Home';
 import {configure, shallow, mount, render} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+jest.mock('../../Services/Webservice/4allHost/Place-consult.jsx');
+
 configure({ adapter: new Adapter() });
 
 describe('Tests of Home scene', () => {
     it('Test the initial states', () => {
-        const wrapper = shallow(<Home />);
+        const wrapper = shallow(<Home id={1} />);
 
         expect(wrapper.state('received')).toBe(false);
         expect(wrapper.state('response')).toBe(false);
-        expect(wrapper.state('userInfo')).toEqual({});
+        expect(wrapper.state('placeInfo')).toEqual({});
     });
 
-    it('expect 5 buttons of navigation', () => {
-        const wrapper = shallow(<Home />);
-        expect(wrapper.find('.tool-box').children()).toHaveLength(5);
+    it('expect 5 buttons of navigation ', () => {
+        const wrapper = render(<Home id={1} />);
+        expect(wrapper.find('.nav-btn')).toHaveLength(5);
     });
 
-    it('Checks if Map is renderizing', () => {
-        const wrapper = mount(shallow(<Home />).get(0));
-        // expect(wrapper.find('<GoogleMaps />').exists()).toBe(true);
+    it('Check if funtion to receive place-data is working as it should', async () => {
+        const wrapper = await mount(<Home id={1} />);
+        expect(wrapper.state('placeInfo').cidade).toEqual('Porto Alegre');
+        expect(wrapper.state('received')).toBe(true);
+        expect(wrapper.state('response')).toBe(true);
+    });
+
+    it('Check if has an h1 informing the user that is waiting for data', () => {
+        const wrapper = render(<Home id={5} />);
+        expect(wrapper.find('.waiting-data').length).toBeGreaterThan(0);
     });
 
 
