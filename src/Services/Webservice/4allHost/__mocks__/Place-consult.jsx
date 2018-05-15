@@ -32,7 +32,7 @@ function getPlace(props) {
 
         return promise
     } else {
-        console.log("not on ids");
+        console.log(`Id: ${props.id} was not found`);
         return false
     }
 
