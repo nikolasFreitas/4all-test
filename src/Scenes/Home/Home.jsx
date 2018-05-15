@@ -26,23 +26,29 @@ class Home extends Component {
                     <div className="content-box">
                         <div className='tool-box'>
                             <span className='nav-btn nav-btn--call'>
-                                <i class="fa fa-phone"></i>
+                                <i className="fa fa-phone"></i>
                             </span>
 
                             <span className='nav-btn nav-btn--services'>
-                                <i class="fa fa-diamond"></i>
+                                <i className="fa fa-diamond"></i>
                             </span>
 
                             <span className='nav-btn nav-btn--adress'>
-                                <i class="fa fa-map-marker"></i>
+                                <i className="fa fa-map-marker"></i>
                             </span>
 
-                            <span className='nav-btn nav-btn--comentary'><i class="fa fa-comments"></i></span>
+                            <span className='nav-btn nav-btn--comentary'>
+                                <i className="fa fa-comments"></i>
+                            </span>
 
                             <span className='nav-btn nav-btn--favorite'>
                                 <i className="fa fa-star"></i>
                             </span>
                         </div>
+
+                        <hr/>
+
+
                     </div>
                 </section>
             </div>
