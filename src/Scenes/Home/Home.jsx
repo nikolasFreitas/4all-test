@@ -20,8 +20,7 @@ class Home extends Component {
     componentDidMount() {
         placeFetch({
             id: this.props.id
-        })
-            .then(data => {
+        }).then(data => {
                 if (data) {
                     this.setState({
                         placeInfo : data,
@@ -33,33 +32,39 @@ class Home extends Component {
                         received : true
                     })
                 }
-            })
+            });
     }
 
     render() {
         const received = this.state.received;
         const response = this.state.response;
+        const placeInfo = this.state.placeInfo;
+        let userAnswear = '';
+
+        if (!received && !response) {
+            userAnswear = "Aguardando resposta";
+        } else if(received && !response) {
+            userAnswear = "Não foi possível se conectar ao servidor";
+        }
 
         return(
             <div className='container'>
-                <Header placeName='Porto Alegre, RS'/>
+                <Header placeName={response ? `${placeInfo.cidade} - ${placeInfo.bairro}` : userAnswear}/>
 
                 <section className='home-image-box'>
                     {(
                         () => {
-                            if (!received && !response) {
-                                return(<h1 className="waiting-data">Aguardando o servidor</h1>)
-                            } else if(received && !response) {
-                                return(<h1 className="reject-text">Sinto muito, não foi possível obter a imagem</h1>)
-                            }
-                        }
+                            if (!response || !received) {
+                                return(<h1 className="waiting-data">{userAnswear}</h1>)
+                        }   }
                     )()}
+
                     <div className="favorite-icon"><i className="fa fa-star"></i></div>
                 </section>
 
                 <section>
-                    <h2>Lorem</h2>
-                    
+                    <h2>{response ? placeInfo.titulo : userAnswear}</h2>
+
                     <div className="content-box">
                         <div className='tool-box'>
                             <NavButtons btnClass='nav-btn--call'>
@@ -90,7 +95,7 @@ class Home extends Component {
 
                         <hr/>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini,</p>
+                        <p>{response ? placeInfo.texto : userAnswear}</p>
                     </div>
                 </section>
             </div>
