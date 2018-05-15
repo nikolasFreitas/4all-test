@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../../Components/Layout/Header/Header.jsx';
-
+import placeFetch from '../../Services/Webservice/4allHost/Place-consult.jsx';
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -8,8 +8,27 @@ class Home extends Component {
         this.state = {
             received : false,
             response : false,
-            userInfo : {},
+            placeInfo : {},
         }
+    }
+
+    componentDidMount() {
+        placeFetch({
+            id: this.props.id
+        })
+            .then(data => {
+                if (data) {
+                    this.setState({
+                        placeInfo : data,
+                        received : true,
+                        response : true
+                    });
+                } else {
+                    this.setState({
+                        received : true
+                    })
+                }
+            })
     }
 
     render() {
