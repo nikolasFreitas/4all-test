@@ -10,7 +10,7 @@ class Header extends Component {
             <header className='header'>
                 <div className='header-icon header-icon--backward'> </div>
                 <div className='header-place'>
-                    <span className='place-icon'></span>
+                    <span className='header-place__place-icon'><i className="fa fa-map-marker"></i></span>
                     <span className='localization'>{this.props.placeName}</span>
                 </div>
                 <div className='header-icon header-icon--search'> </div>

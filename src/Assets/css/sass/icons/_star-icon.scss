@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     position: absolute;
     bottom: -35px;
     right: 15px;
@@ -13,4 +13,8 @@
     border-radius: 50%;
     background: $grey-100;
 
+}
+
+.header-place__place-icon {
+    margin-right: 5px; 
 }
