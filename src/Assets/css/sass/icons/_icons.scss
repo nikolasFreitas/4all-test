@@ -22,3 +22,18 @@
 .header-place__place-icon {
     margin-right: 5px;
 }
+
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    text-align: center;
+
+    width: 20%;
+    padding: 0px 5px;
+    font-size: 30px;
+
+    color: $custom-gold;
+}
