@@ -13,8 +13,12 @@
     border-radius: 50%;
     background: $grey-100;
 
+    .fa {
+        font-size: 45px;
+        color: $custom-gold;
+    }
 }
 
 .header-place__place-icon {
-    margin-right: 5px; 
+    margin-right: 5px;
 }
