@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
+
 import Header from '../../Components/Layout/Header/Header.jsx';
+import NavButtons from '../../Components/Buttons/Nav-buttons.jsx';
+
 import placeFetch from '../../Services/Webservice/4allHost/Place-consult.jsx';
+
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -32,42 +37,55 @@ class Home extends Component {
     }
 
     render() {
+        const received = this.state.received;
+        const response = this.state.response;
+
         return(
             <div className='container'>
                 <Header placeName='Porto Alegre, RS'/>
 
                 <section className='home-image-box'>
+                    {(
+                        () => {
+                            if (!received && !response) {
+                                return(<h1 className="waiting-data">Aguardando o servidor</h1>)
+                            } else if(received && !response) {
+                                return(<h1 className="reject-text">Sinto muito, não foi possível obter a imagem</h1>)
+                            }
+                        }
+                    )()}
                     <div className="favorite-icon"><i className="fa fa-star"></i></div>
                 </section>
 
                 <section>
                     <h2>Lorem</h2>
+                    
                     <div className="content-box">
                         <div className='tool-box'>
-                            <span className='nav-btn nav-btn--call'>
+                            <NavButtons btnClass='nav-btn--call'>
                                 <i className="fa fa-phone"></i>
                                 <span className="nav-btn__legend">Ligar</span>
-                            </span>
+                            </NavButtons>
 
-                            <span className='nav-btn nav-btn--services'>
+                            <NavButtons btnClass='nav-btn--services'>
                                 <i className="fa fa-diamond"></i>
                                 <span className="nav-btn__legend">Serviços</span>
-                            </span>
+                            </NavButtons>
 
-                            <span className='nav-btn nav-btn--adress'>
+                            <NavButtons btnClass='nav-btn--adress'>
                                 <i className="fa fa-map-marker"></i>
                                 <span className="nav-btn__legend">Endereço</span>
-                            </span>
+                            </NavButtons>
 
-                            <span className='nav-btn nav-btn--comentary'>
+                            <NavButtons btnClass='nav-btn--comentary'>
                                 <i className="fa fa-comments"></i>
                                 <span className="nav-btn__legend">Comentários</span>
-                            </span>
+                            </NavButtons>
 
-                            <span className='nav-btn nav-btn--favorite'>
+                            <NavButtons btnClass='nav-btn--favorite'>
                                 <i className="fa fa-star"></i>
                                 <span className="nav-btn__legend">Favoritos</span>
-                            </span>
+                            </NavButtons>
                         </div>
 
                         <hr/>
