@@ -18,3 +18,12 @@
     width: 100%;
     padding: 10px 15px;
 }
+
+.tool-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+
+    width: 100%;
+}
