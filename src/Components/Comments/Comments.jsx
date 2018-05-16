@@ -11,12 +11,12 @@ class Comments extends Component{
                 </span>
 
                 <span className="comment-box__info">
-                    <div className="infro__box">
+                    <div className="info__box">
                         <p className="comment-name">{this.props.name}</p>
                         <p className="comment-title">{this.props.title}</p>
                     </div>
 
-                    <div className="infro__box">
+                    <div className="info__box">
                         <p className="rate-box">
                             {
                                 rate.map(oneRate => {
