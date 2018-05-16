@@ -5,3 +5,20 @@
 
     padding-left: 5px;
 }
+
+.info__box {
+    display: inline-block;
+    width: 50%;
+
+    vertical-align: middle;
+
+    &:nth-child(2) {
+        text-align: right;
+        padding-right: 10px;
+    }
+}
+
+.comment-name, .comment-title {
+    margin: 5px 0;
+
+}
