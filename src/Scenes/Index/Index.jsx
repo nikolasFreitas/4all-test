@@ -31,36 +31,37 @@ class Index extends Component {
     }
 
     render() {
-        if (this.state.received) {
-            if (this.state.response) {
-                return(
-                    <div className="container container--middle">
-                        <h1>Escolha uma das opções</h1>
-                        <ul className="list list--vertical list--user-id">
-                        {
-                         this.state.idTable.lista.map((option, index) => {
-                             return (
-                                 <li className="list-item list-item--user-id" key={index}>{option}</li>
-                             )
-                         })
+        const received = this.state.received;
+        const response = this.state.response;
+        let userAnswear = 'Escolha uma das opções';
+
+        if (!received && !response) {
+            userAnswear = "Aguardando resposta";
+        } else if(received && !response) {
+            userAnswear = "Não foi possível se conectar ao servidor";
+        }
+
+        return(
+            <div className="container container--middle">
+                <h1>{userAnswear}</h1>
+                <ul className="list list--vertical list--user-id">
+                {(
+                    () => {
+                        if (response) {
+                            return(
+                                this.state.idTable.lista.map((option, index) => {
+                                    return (
+                                        <li className="list-item list-item--user-id" key={index}>{option}</li>
+                                    )
+                                })
+                            )
                         }
-                        </ul>
-                    </div>
-                )
-            } else {
-                return (
-                    <div className="container container--middle">
-                        <h1> Infelizmente não foi possível conectar ao nosso servidor</h1>
-                    </div>
-                )
-            }
-        } else {
-            return(
-                <div className="container container--middle">
-                    <h1> Buscando informação do servidor</h1>
-                </div>
-            );
-         }
+                    }
+                )()}
+                </ul>
+            </div>
+        )
+
     }
 }
 
