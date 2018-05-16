@@ -5,10 +5,12 @@
 @import "sass/general-rules/_general-rules";
 @import "sass/general-rules/_fonts";
 
-// Get app style sheets
+// Get custom app style sheets
 @import "sass/container/_container";
 @import "sass/list/_list";
 @import "sass/header/_header";
 @import "sass/container/_image-box";
 @import "sass/icons/_icons";
 @import "sass/fonts/_font-element";
+@import "sass/container/_text-block";
+@import "sass/images/_images";
