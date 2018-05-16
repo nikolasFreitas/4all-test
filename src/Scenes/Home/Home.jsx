@@ -56,8 +56,9 @@ class Home extends Component {
                     {(
                         () => {
                             if (!response || !received) {
-                                return(<h1 className="waiting-data">{userAnswear}</h1>)
-                        }   }
+                                return(<h2 className="waiting-data">{userAnswear}</h2>)
+                            }
+                        }
                     )()}
 
                     <div className="favorite-icon"><i className="fa fa-star"></i></div>
@@ -69,7 +70,7 @@ class Home extends Component {
                         <div className='tool-box'>
                             <NavButtons />
                         </div>
-                        
+
                         <hr/>
 
                         <p>{response ? placeInfo.texto : userAnswear}</p>
@@ -77,15 +78,26 @@ class Home extends Component {
                 </section>
 
                 <section className="map-box ">
-                    <GoogleMaps
-                        isMarkerShown= {true}
-                        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                        loadingElement={<div style={{ height: `100%` }} />}
-                        containerElement={<div style={{ height: `200px` }} />}
-                        mapElement={<div style={{ height: `100%` }} />}
-                        lat={placeInfo.latitude}
-                        long={placeInfo.longitude}
-                    />
+                    {(
+                        () => {
+                            if (response) {
+                                return(
+                                    <GoogleMaps
+                                        isMarkerShown= {true}
+                                        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                                        loadingElement={<div style={{ height: `100%` }} />}
+                                        containerElement={<div style={{ height: `150px` }} />}
+                                        mapElement={<div style={{ height: `100%` }} />}
+                                        lat={placeInfo.latitude}
+                                        long={placeInfo.longitude}
+                                    />
+                                )
+                            } else {
+                                return (<h2 className="waiting-data">{userAnswear}</h2>)
+                            }
+                        }
+                    )()}
+
                 </section>
 
                 <section className="content-box">
