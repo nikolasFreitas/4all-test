@@ -14,3 +14,22 @@
     background-size: cover;
     background-attachment: fixed;
 }
+
+.comment-box__image-box {
+    display: inline-block;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+    position: relative;
+
+    shape-outside: circle(50%);
+    img {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+    }
+}
