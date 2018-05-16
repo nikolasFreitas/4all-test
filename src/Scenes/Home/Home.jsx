@@ -65,35 +65,11 @@ class Home extends Component {
 
                 <section>
                     <h2>{response ? placeInfo.titulo : userAnswear}</h2>
-
                     <div className="content-box">
                         <div className='tool-box'>
-                            <NavButtons btnClass='nav-btn--call'>
-                                <i className="fa fa-phone"></i>
-                                <span className="nav-btn__legend">Ligar</span>
-                            </NavButtons>
-
-                            <NavButtons btnClass='nav-btn--services'>
-                                <i className="fa fa-diamond"></i>
-                                <span className="nav-btn__legend">Serviços</span>
-                            </NavButtons>
-
-                            <NavButtons btnClass='nav-btn--adress'>
-                                <i className="fa fa-map-marker"></i>
-                                <span className="nav-btn__legend">Endereço</span>
-                            </NavButtons>
-
-                            <NavButtons btnClass='nav-btn--comentary'>
-                                <i className="fa fa-comments"></i>
-                                <span className="nav-btn__legend">Comentários</span>
-                            </NavButtons>
-
-                            <NavButtons btnClass='nav-btn--favorite'>
-                                <i className="fa fa-star"></i>
-                                <span className="nav-btn__legend">Favoritos</span>
-                            </NavButtons>
+                            <NavButtons />
                         </div>
-
+                        
                         <hr/>
 
                         <p>{response ? placeInfo.texto : userAnswear}</p>
@@ -113,7 +89,7 @@ class Home extends Component {
                 </section>
 
                 <section className="content-box">
-                    
+
                 </section>
             </div>
         )
