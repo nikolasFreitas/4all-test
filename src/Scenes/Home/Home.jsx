@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Header from '../../Components/Layout/Header/Header.jsx';
 import NavButtons from '../../Components/Buttons/Nav-buttons.jsx';
+import GoogleMaps from '../../Components/GoogleMaps/Maps.jsx';
 
 import placeFetch from '../../Services/Webservice/4allHost/Place-consult.jsx';
 
@@ -97,6 +98,22 @@ class Home extends Component {
 
                         <p>{response ? placeInfo.texto : userAnswear}</p>
                     </div>
+                </section>
+
+                <section className="map-box ">
+                    <GoogleMaps
+                        isMarkerShown= {true}
+                        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                        loadingElement={<div style={{ height: `100%` }} />}
+                        containerElement={<div style={{ height: `200px` }} />}
+                        mapElement={<div style={{ height: `100%` }} />}
+                        lat={placeInfo.latitude}
+                        long={placeInfo.longitude}
+                    />
+                </section>
+
+                <section className="content-box">
+                    
                 </section>
             </div>
         )
