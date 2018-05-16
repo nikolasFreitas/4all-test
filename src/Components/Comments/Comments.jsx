@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 class Comments extends Component{
 
     render() {
+        const rate = rateAsArray(this.props.rate);
         return(
             <div className="comment-box">
                 <span className="comment-box__image-box">
@@ -17,13 +18,12 @@ class Comments extends Component{
 
                     <div className="infro__box">
                         <p className="rate-box">
-                            {(
-                                () => {
-                                    for (var i = 0; i < this.props.rate; i++) {
-                                        return(<i key={i} className="fa fa-star" aria-hidden="true"></i>)
-                                    }
-                                }
-                            )()}
+                            {
+                                rate.map(oneRate => {
+                                    console.log(oneRate);
+                                    return(oneRate)
+                                })
+                            }
                         </p>
                     </div>
                 </span>
@@ -32,6 +32,16 @@ class Comments extends Component{
             </div>
         )
     }
+}
+
+const rateAsArray = (qtd) => {
+    const elements = [];
+
+    for (var i = 0; i < qtd; i++) {
+        elements.push(<i key={i} className="fa fa-star" aria-hidden="true"></i>)
+    }
+
+    return elements
 }
 
 export default Comments
