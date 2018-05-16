@@ -20,5 +20,20 @@
 
 .comment-name, .comment-title {
     margin: 5px 0;
+}
 
+.map-box__adress {
+    width: 100%;
+
+    padding: 5px 15px;
+    padding-right: 50px;
+    margin: 0px;
+
+    position: absolute;
+
+    text-align: right;
+
+    background: $custom-gold;
+    color: white;
+    bottom: 0px;
 }

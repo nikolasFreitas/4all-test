@@ -37,3 +37,25 @@
 
     color: $custom-gold;
 }
+
+.map-adress__icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    border-radius: 50%;
+
+    text-align: center;
+
+    background: white;
+    color: $custom-gold;
+}

@@ -98,7 +98,12 @@ class Home extends Component {
                             }
                         }
                     )()}
-
+                    <p className="map-box__adress">
+                        {response ? placeInfo.endereco : userAnswear}
+                        <span className="left-spacer map-adress__icon">
+                            <i class="fa fa-map-marker"></i>
+                        </span>
+                    </p>
                 </section>
 
                 <section className="content-box">
