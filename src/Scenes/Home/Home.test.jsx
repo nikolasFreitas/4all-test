@@ -29,8 +29,8 @@ describe('Tests of Home scene', () => {
         expect(wrapper.state('response')).toBe(true);
     });
 
-    it('Check if has an h1 informing the user that is waiting for data', () => {
-        const wrapper = render(<Home id={5} />);
+    it('Check if has an h1 informing the user that is waiting for data or data not found', async () => {
+        const wrapper = await render(<Home id={5} />);
         expect(wrapper.find('.waiting-data').length).toBeGreaterThan(0);
     });
 
