@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Header from '../../Components/Layout/Header/Header.jsx';
 import NavButtons from '../../Components/Buttons/Nav-buttons.jsx';
 import GoogleMaps from '../../Components/GoogleMaps/Maps.jsx';
+import Comments from '../../Components/Comments/Comments.jsx';
 
 import placeFetch from '../../Services/Webservice/4allHost/Place-consult.jsx';
 
@@ -101,7 +102,25 @@ class Home extends Component {
                 </section>
 
                 <section className="content-box">
-
+                    {(
+                        () => {
+                            if (response && placeInfo.comentarios.length > 0) {
+                                return(
+                                    placeInfo.comentarios.map(comment => {
+                                        return(
+                                            <Comments
+                                            imageSrc={comment.urlFoto}
+                                            name={comment.nome}
+                                            rate={comment.nota}
+                                            title={comment.titulo}
+                                            comment={comment.comentario}
+                                            />
+                                        )
+                                    })
+                                )
+                            }
+                        }
+                    )()}
                 </section>
             </div>
         )
