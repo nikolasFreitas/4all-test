@@ -20,7 +20,6 @@ class Comments extends Component{
                         <p className="rate-box">
                             {
                                 rate.map(oneRate => {
-                                    console.log(oneRate);
                                     return(oneRate)
                                 })
                             }
