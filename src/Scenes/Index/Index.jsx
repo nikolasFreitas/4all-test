@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import IdFetch from '../../Services/Webservice/4allHost/Id-consult.jsx';
 
+import { NavLink } from 'react-router-dom';
+
 class Index extends Component {
     constructor (props) {
         super(props);
@@ -51,7 +53,7 @@ class Index extends Component {
                             return(
                                 this.state.idTable.lista.map((option, index) => {
                                     return (
-                                        <li className="list-item list-item--user-id" key={index}>{option}</li>
+                                        <NavLink to={`/home/${option}`} className="list-item list-item--user-id" key={index}>{option}</NavLink>
                                     )
                                 })
                             )

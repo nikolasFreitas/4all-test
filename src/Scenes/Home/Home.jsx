@@ -11,7 +11,6 @@ import placeFetch from '../../Services/Webservice/4allHost/Place-consult.jsx';
 class Home extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             received : false,
             response : false,
@@ -21,7 +20,7 @@ class Home extends Component {
 
     componentDidMount() {
         placeFetch({
-            id: this.props.id
+            id: this.props.match.params.id
         }).then(data => {
                 if (data) {
                     this.setState({
@@ -38,6 +37,8 @@ class Home extends Component {
     }
 
     render() {
+
+
         const received = this.state.received;
         const response = this.state.response;
         const placeInfo = this.state.placeInfo;
@@ -48,6 +49,8 @@ class Home extends Component {
         } else if(received && !response) {
             userAnswear = "Não foi possível se conectar ao servidor";
         }
+
+
 
         return(
             <div className='container'>
@@ -85,7 +88,7 @@ class Home extends Component {
                                 return(
                                     <GoogleMaps
                                         isMarkerShown= {true}
-                                        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                                        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjk1o0vvC0Mtz-64MNfRG_9G79Zy0dmFs&v=3.exp&libraries=geometry,drawing,places"
                                         loadingElement={<div style={{ height: `100%` }} />}
                                         containerElement={<div style={{ height: `150px` }} />}
                                         mapElement={<div style={{ height: `100%` }} />}
@@ -101,7 +104,7 @@ class Home extends Component {
                     <p className="map-box__adress">
                         {response ? placeInfo.endereco : userAnswear}
                         <span className="left-spacer map-adress__icon">
-                            <i class="fa fa-map-marker"></i>
+                            <i className="fa fa-map-marker"></i>
                         </span>
                     </p>
                 </section>
