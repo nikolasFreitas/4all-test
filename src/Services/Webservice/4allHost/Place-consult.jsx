@@ -1,5 +1,3 @@
-import React from 'react';
-
 async function getPlace(props) {
     const url = 'http://dev.4all.com:3003';
     const page = 'tarefa';
