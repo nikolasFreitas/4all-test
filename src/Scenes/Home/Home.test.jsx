@@ -32,7 +32,7 @@ describe('Tests of Home scene', () => {
 
         const wrapper = render(
             <MemoryRouter>
-                <Home id={1} />
+                <Home match={{params: {id : '1'} }}/>
             </MemoryRouter>
         );
         expect(wrapper.find('.nav-btn')).toHaveLength(5);
@@ -57,7 +57,7 @@ describe('Tests of Home scene', () => {
     it('Check if has an h1 informing the user that is waiting for data or data not found', async () => {
         const wrapper = await render(
             <MemoryRouter>
-                <Home id={5} />
+                <Home match={{params: {id : '5'} }}/>
             </MemoryRouter>
         );
         expect(wrapper.find('.waiting-data').length).toBeGreaterThan(0);
