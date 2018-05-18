@@ -4,7 +4,7 @@ import Index from './Index.jsx';
 import {configure, shallow, mount, render} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import createRouterContext from 'react-router-test-context'
+import createRouterContext from 'react-router-test-context';
 
 configure({ adapter: new Adapter() });
 
