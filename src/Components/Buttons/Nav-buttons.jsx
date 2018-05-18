@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 class NavButtons extends Component {
 
+
     render() {
         return([
             <span className='nav-btn nav-btn--call' key={1} onClick={this.props.callTo}>
@@ -15,12 +16,12 @@ class NavButtons extends Component {
                 <span className="nav-btn__legend">Serviços</span>
             </Link>,
 
-            <span className='nav-btn nav-btn--adress' key={3} onClick={this.props.scrollTo}>
+            <span className='nav-btn nav-btn--adress' key={3} onClick={this.props.lightBox}>
                 <i className="fa fa-map-marker"></i>
                 <span className="nav-btn__legend">Endereço</span>
             </span>,
 
-            <span className='nav-btn nav-btn--comentary' key={4} onClick={this.props.lightBox}>
+            <span className='nav-btn nav-btn--comentary' key={4} onClick={this.props.scrollTo}>
                 <i className="fa fa-comments"></i>
                 <span className="nav-btn__legend">Comentários</span>
             </span>,
