@@ -7,7 +7,7 @@ class Comments extends Component{
         return(
             <div className="comment-box">
                 <span className="comment-box__image-box">
-                    <img src={this.props.imageSrc} />
+                    <img src={this.props.imageSrc} alt="Imagem da cidade"/>
                 </span>
 
                 <span className="comment-box__info">
