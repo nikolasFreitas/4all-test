@@ -16,6 +16,8 @@ class Home extends Component {
             response : false,
             placeInfo : {},
         }
+
+        this.scrolling = this.scrolling.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +36,16 @@ class Home extends Component {
                     })
                 }
             });
+    }
+
+    scrolling() {
+        let headerHeight = document.querySelector('.header').clientHeight;
+        headerHeight += 15;
+        const offTop = document.querySelector('.comment-box').offsetTop;
+        window.scrollTo({
+            top: offTop - headerHeight,
+            behavior: "smooth"
+        });
     }
 
     render() {
@@ -70,7 +82,7 @@ class Home extends Component {
                     <h2>{response ? placeInfo.titulo : userAnswear}</h2>
                     <div className="content-box">
                         <div className='tool-box'>
-                            <NavButtons moveTo={this.props.match.params.id}/>
+                            <NavButtons moveTo={this.props.match.params.id} scrollTo={this.scrolling}/>
                         </div>
 
                         <hr/>
