@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class NavButtons extends Component {
 
@@ -9,10 +10,10 @@ class NavButtons extends Component {
                 <span className="nav-btn__legend">Ligar</span>
             </span>,
 
-            <span className='nav-btn nav-btn--services' key={2} onClick={this.props.move}>
+            <Link className='nav-btn nav-btn--services' key={2} to={`/servico/${this.props.moveTo}`}>
                 <i className="fa fa-diamond"></i>
                 <span className="nav-btn__legend">Serviços</span>
-            </span>,
+            </Link>,
 
             <span className='nav-btn nav-btn--adress' key={3} onClick={this.props.scrollTo}>
                 <i className="fa fa-map-marker"></i>
