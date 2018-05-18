@@ -50,13 +50,11 @@ class Home extends Component {
             userAnswear = "Não foi possível se conectar ao servidor";
         }
 
-
-
         return(
             <div className='container'>
-                <Header placeName={response ? `${placeInfo.cidade} - ${placeInfo.bairro}` : userAnswear}/>
+                <Header placeName={response ? `${placeInfo.cidade} - ${placeInfo.bairro}` : userAnswear} link={`/`}/>
 
-                <section className='home-image-box'>
+                <section className='home-image-box' style={ {backgroundImage :`url( ${response ?  placeInfo.urlFoto : null} )`} }>
                     {(
                         () => {
                             if (!response || !received) {
@@ -72,7 +70,7 @@ class Home extends Component {
                     <h2>{response ? placeInfo.titulo : userAnswear}</h2>
                     <div className="content-box">
                         <div className='tool-box'>
-                            <NavButtons />
+                            <NavButtons moveTo={this.props.match.params.id}/>
                         </div>
 
                         <hr/>
